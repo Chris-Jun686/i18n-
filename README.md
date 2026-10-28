@@ -84,7 +84,8 @@ MSG_ITEM_GAINED = You got {count} {itemName}.
 Localization.Get("MSG_ITEM_GAINED", count, itemName);
 ```
 
-如果涉及单复数、性别、选择，最好使用 ICU MessageFormat 这类本地化格式，而不是在代码里写 `if (count == 1)`：
+如果涉及单复数、性别、选择，最好使用 ICU MessageFormat 这类本地化格式，而不是在代码里写 </br>
+`if (count == 1)`：
 
 ```text
 {count, plural,
