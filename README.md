@@ -38,9 +38,13 @@ itemName.text = Localization.Get("ITEM_SWORD_IRON_NAME");
 
 ```text
 模块_对象_字段_状态
+
 ITEM_SWORD_IRON_NAME
+
 UI_BUTTON_CONFIRM
+
 QUEST_001_OBJECTIVE_01
+
 ERROR_NETWORK_TIMEOUT
 ```
 
