@@ -46,21 +46,24 @@
 - **R5-20** 存档只保存物品、任务等的 ID 和数量，不保存显示文字。
 - **R5-21** 读取存档时，按当前语言查文本表显示名称，这样玩家切换语言后，旧存档也能正确显示。
 
-## 5.3 前作纰漏
+## 5.3 前作发生了什么
 
 ### 5.3.1 文本表与统一表述
-
-> *以下 3 处同样表达属性提升的文本出现 3 种不同表述。*
 
 **问题编号-#23** </br>
 <img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
 
+> 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方
+
 **问题编号-#28** </br>
 <img width="600" height="300" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 
+> “Affection 3 increased” 把数值夹在属性名和动词中间，英文读起来不自然。
 
 **问题编号-#30** </br>
 <img width="600" height="300" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
+
+> “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明是为拼接生成。既属于表述不统一，也属于拼接问题。
 
 ### 5.3.2 句子拼接
 
@@ -69,8 +72,12 @@
 **问题编号-#22** </br>
 <img width="600" height="300" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 
+> “chance to Obtain double dishes” 句中出现大写，说明前后两段文字分开存放后拼在了⼀起。
+
 **问题编号-#26** </br>
 <img width="600" height="300" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
+
+> “purchasing itemsfrom the store” 两个单词之间缺少空格，同样是拼接导致。
 
 ## 5.4 正确与错误示范
 
