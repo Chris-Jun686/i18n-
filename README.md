@@ -59,7 +59,7 @@
 **问题编号-#28** </br>
 <img width="600" height="300" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 
-> “Affection 3 increased” 把数值夹在属性名和动词中间，R5-08、R5-12英文读起来不自然。</br>
+> “Affection 3 increased” 把数值夹在属性名和动词中间，英文读起来不自然。</br>
 > 对应R5-08、R5-12
 
 **问题编号-#30** </br>
