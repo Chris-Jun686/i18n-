@@ -105,7 +105,7 @@ emotionText.text = "情绪增加了" + count;
 emotionText.text = Localization.Get("ATTR_EMOTION_GAINED", count);
 ```
 
-> 其中Localization.Get为伪代码；且 `count` 为运行时传入的数值，例如 3。文本表保存完整句子模板，翻译人员可调整 `{count}` 在句中的位置；代码只按占位符名称传参，不拼接句子。
+> 其中Localization.Get为演示用伪代码； `count` 为运行时传入的数值，例如 3。文本表保存完整句子模板，翻译人员可调整 `{count}` 在句中的位置；代码只按占位符名称传参，不拼接句子。
 
 ### 5.4.2 不拼接句子
 
