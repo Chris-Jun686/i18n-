@@ -53,19 +53,19 @@
 **问题编号-#23** </br>
 <img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
 
-> 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方
+> 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方</br>
 > 对应R5-03、R5-08
 
 **问题编号-#28** </br>
 <img width="600" height="300" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 
-> “Affection 3 increased” 把数值夹在属性名和动词中间，R5-08、R5-12英文读起来不自然。
+> “Affection 3 increased” 把数值夹在属性名和动词中间，R5-08、R5-12英文读起来不自然。</br>
 > 对应R5-08、R5-12
 
 **问题编号-#30** </br>
 <img width="600" height="300" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
 
-> “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明是为拼接生成。既属于表述不统一，也属于拼接问题。
+> “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明是为拼接生成。既属于表述不统一，也属于拼接问题。</br>
 > 对应R5-08、R5-10
 
 ### 5.3.2 句子拼接
@@ -73,13 +73,13 @@
 **问题编号-#22** </br>
 <img width="600" height="300" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 
-> “chance to Obtain double dishes” 句中出现大写，说明前后两段文字分开存放后拼在了一起。
+> “chance to Obtain double dishes” 句中出现大写，说明前后两段文字分开存放后拼在了一起。</br>
 > 对应R5-09、R5-10
 
 **问题编号-#26** </br>
 <img width="600" height="300" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
 
-> “purchasing itemsfrom the store” 两个单词之间缺少空格，同样是拼接导致。
+> “purchasing itemsfrom the store” 两个单词之间缺少空格，同样是拼接导致。</br>
 > 对应R5-09、R5-10
 
 ## 5.4 正确与错误示范
