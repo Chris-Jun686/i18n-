@@ -174,27 +174,27 @@ itemName.text = Localization.Get("ITEM_SWORD_IRON_NAME");
 
 **用 String Table 管所有可见文本**
 
-在 `Window → Asset Management → Localization Tables` 中创建 `String Table Collection`，每个 key 就是本章的字符串 ID。</br>
+* 在 `Window → Asset Management → Localization Tables` 中创建 `String Table Collection`，每个 key 就是本章的字符串 ID。</br>
 
-代码和预制体里只引用 key，不写文字；UI 上的 `Text`/`TextMeshProUGUI` 组件可绑定 `LocalizedString`，由它按当前 Locale 从 String Table 取值。</br>
+* 代码和预制体里只引用 key，不写文字；UI 上的 `Text`/`TextMeshProUGUI` 组件可绑定 `LocalizedString`，由它按当前 Locale 从 String Table 取值。</br>
 
 **用 Smart Strings 处理占位符与语法变化**
 
-Smart Strings 能够一句话保留完整模板，支持命名占位符，替代 `{0}`、`{1}` 这类数字索引，对译者更友好。同时程序按名字填内容，按数量、性别等自动选对说法，避免把句子拆开硬拼。
+* Smart Strings 能够一句话保留完整模板，支持命名占位符，替代 `{0}`、`{1}` 这类数字索引，对译者更友好。同时程序按名字填内容，按数量、性别等自动选对说法，避免把句子拆开硬拼。
 
 **存档只存 ID，显示时查 String Table**
 
-存档里保存 `"itemId": "ITEM_SWORD_IRON"`，读档时用 `Localization.Get("ITEM_SWORD_IRON_NAME")` 或通过物品配置映射到名称 key，再按当前语言取文本。
+* 存档里保存 `"itemId": "ITEM_SWORD_IRON"`，读档时用 `Localization.Get("ITEM_SWORD_IRON_NAME")` 或通过物品配置映射到名称 key，再按当前语言取文本。
 
 **不要在存档中保存任何 `LocalizedString` 的当前取值**
 
-存档一旦存了文字，切语言后旧档就可能出现混杂语言。
+* 存档一旦存了文字，切语言后旧档就可能出现混杂语言。
 
 **玩家输入单独保存，不进 String Table**
 
-玩家给女儿起的名字存为原始字符串，不放入任何 String Table，也不标记翻译；需要嵌入系统句子时，把它作为 Smart String 的 `{daughter_name}` 参数传入即可。</br>
+* 玩家给女儿起的名字存为原始字符串，不放入任何 String Table，也不标记翻译；需要嵌入系统句子时，把它作为 Smart String 的 `{daughter_name}` 参数传入即可。</br>
 
-**内部调试日志、协议字段、文件路径**同样不进 String Table——String Table 的每一行都是给译者的，放进去只会浪费翻译资源。
+* **内部调试日志、协议字段、文件路径**同样不进 String Table——String Table 的每一行都是给译者的，放进去只会浪费翻译资源。
 
 ## 5.5 检查清单
 
