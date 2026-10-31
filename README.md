@@ -169,19 +169,19 @@ itemName.text = Localization.Get("ITEM_SWORD_IRON_NAME");
 
 或通过物品配置把 `ITEM_SWORD_IRON` 映射到名称文本 ID `ITEM_SWORD_IRON_NAME`，再查当前语言文本。这样切换到英文后，旧存档会显示 `Iron Sword`，不会继续显示“铁剑”。
 
-```## 5.5 使用Unity引擎时的操作tips
+> **使用Unity引擎时需注意**
 
-**5.5.1 用 String Table 管所有可见文本**
+**用 String Table 管所有可见文本**
 
 在 `Window → Asset Management → Localization Tables` 中创建 `String Table Collection`，每个 key 就是本章的字符串 ID。</br>
 
 代码和预制体里只引用 key，不写文字；UI 上的 `Text`/`TextMeshProUGUI` 组件可绑定 `LocalizedString`，由它按当前 Locale 从 String Table 取值。</br>
 
-**5.5.2 用 Smart Strings 处理占位符与语法变化**
+**用 Smart Strings 处理占位符与语法变化**
 
-Smart Strings 是 Unity 对 SmartFormat 的移植，支持**命名占位符**，替代 `{0}`、`{1}` 这类数字索引，对译者更友好。</br>
+Smart Strings 能够一句话保留完整模板，支持命名占位符，替代 `{0}`、`{1}` 这类数字索引，对译者更友好。同时程序按名字填内容，按数量、性别等自动选对说法，避免把句子拆开硬拼。
 
-**5.5.3. 存档只存 ID，显示时查 String Table**
+**存档只存 ID，显示时查 String Table**
 
 存档里保存 `"itemId": "ITEM_SWORD_IRON"`，读档时用 `Localization.Get("ITEM_SWORD_IRON_NAME")` 或通过物品配置映射到名称 key，再按当前语言取文本。
 
@@ -192,11 +192,6 @@ Smart Strings 是 Unity 对 SmartFormat 的移植，支持**命名占位符**，
 玩家给女儿起的名字存为原始字符串，不放入任何 String Table，也不标记翻译；需要嵌入系统句子时，把它作为 Smart String 的 `{daughter_name}` 参数传入即可。</br>
 
 **内部调试日志、协议字段、文件路径**同样不进 String Table——String Table 的每一行都是给译者的，放进去只会浪费翻译资源。
-
-**5.5.5 预制体文字也要走 key**
-
-Unity 的 LocalizedString 支持在 Prefab 上直接绑定 key，但**预制体里残留的默认占位文字仍需清掉或替换为 key 引用**；前作英文界面漏出中文，正是“预制体默认文字没有外置”的典型表现。可以在构建前用脚本扫描 Prefab 中是否有未被 LocalizedString 覆盖的硬编码字符串。
-```
 
 ## 5.6 检查清单
 
