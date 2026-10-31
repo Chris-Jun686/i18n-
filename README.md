@@ -1,6 +1,6 @@
 # 第5章：《文本管理与存档》
 
-## 5.1关于文本管理与存档
+## 5.1 关于文本管理与存档
 
 游戏里给玩家看的每一句话、每个按钮名和道具名，都不要直接写在程序里，而是集中记在一张清单上，程序只记一个固定编号，显示时按编号去清单里取当前语言的文字。一句话要整句记，数字和名字留空由程序填，不能把句子拆开拼。存档时也只记物品、任务等的编号和数量，不记玩家看到的文字，这样换语言后旧存档仍能显示正确语言。
 
@@ -54,19 +54,19 @@
 <img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
 
 > 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方</br>
-> 对应规则R5-03、R5-08
+> 对应规则 R5-03、R5-08
 
 **问题编号-#28** </br>
 <img width="600" height="300" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 
 > “Affection 3 increased” 把数值夹在属性名和动词中间，英文读起来不自然。</br>
-> 对应规则R5-08、R5-12
+> 对应规则 R5-08、R5-12
 
 **问题编号-#30** </br>
 <img width="600" height="300" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
 
-> “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明是为拼接生成。既属于表述不统一，也属于拼接问题。</br>
-> 对应规则R5-08、R5-10
+> “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明由拼接导致。既属于表述不统一，也属于拼接问题。</br>
+> 对应规则 R5-08、R5-10
 
 ### 5.3.2 句子拼接
 
@@ -74,13 +74,13 @@
 <img width="600" height="300" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 
 > “chance to Obtain double dishes” 句中出现大写，说明前后两段文字分开存放后拼在了一起。</br>
-> 对应规则R5-09、R5-10
+> 对应规则 R5-09、R5-10
 
 **问题编号-#26** </br>
 <img width="600" height="300" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
 
 > “purchasing itemsfrom the store” 两个单词之间缺少空格，同样是拼接导致。</br>
-> 对应规则R5-09、R5-10
+> 对应规则 R5-09、R5-10
 
 ## 5.4 正确与错误示范
 
@@ -119,7 +119,7 @@ emotionText.text = Localization.Get("ATTR_EMOTION_GAINED", count);
 
 ### 5.4.2 不拼接句子
 
-**示例：飞鸽传书与单复数**
+**示例：飞鸽传书**
 
 - 中文原文：你还有 5 封飞鸽传书
 - 错误写法：
@@ -142,7 +142,7 @@ MSG_NEW_LETTERS = 你还有{count}封飞鸽传书
 Localization.Get("MSG_NEW_LETTERS", count);
 ```
 
-英文单复数的处理见第6章。
+> 英文单复数的处理见第6章。
 
 ### 5.4.3 存档只存 ID、不存文字
 
@@ -195,7 +195,7 @@ Smart Strings 能够一句话保留完整模板，支持命名占位符，替代
 
 **内部调试日志、协议字段、文件路径**同样不进 String Table——String Table 的每一行都是给译者的，放进去只会浪费翻译资源。
 
-## 5.6 检查清单
+## 5.5 检查清单
 
 ☐ 在代码和 UI 预制体里搜索，找不到玩家可见的中文。</br>
 
@@ -212,5 +212,5 @@ Smart Strings 能够一句话保留完整模板，支持命名占位符，替代
 ## 参考文献
 
 * IGDA本地化兴趣小组《游戏本地化最佳实践》*[Best Practices for Game Localization](https://igda.org/resources-archive/best-practices-for-game-localization/)*
-* Unity引擎本地化文档 **[Unity文档](https://docs.unity.com/en-us/engine/6000.7/manual/scripting/generate-dynamic-text/smart-strings)**
-* 微软软件本地化文档 **[微软文档](https://xtm.ai/blog/software-localization)**
+* Unity引擎本地化文档 **[Unity文档]](https://docs.unity3d.com/Packages/com.unity.localization@1.4/manual/LocalizationSettings.html))**
+* 微软软件本地化博客 **[微软博客](https://xtm.ai/blog/software-localization)**
