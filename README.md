@@ -211,6 +211,6 @@ Smart Strings 能够一句话保留完整模板，支持命名占位符，替代
 
 ## 参考文献
 
-* IGDA本地化兴趣小组《游戏本地化最佳实践》*Best Practices for Game Localization(https://igda.org/resources-archive/best-practices-for-game-localization/)*
-* Unity引擎本地化文档 **Unity文档(https://docs.unity.com/en-us/engine/6000.7/manual/scripting/generate-dynamic-text/smart-strings)**
-* 微软软件本地化文档 **微软文档(https://xtm.ai/blog/software-localization)**
+* IGDA本地化兴趣小组《游戏本地化最佳实践》*[Best Practices for Game Localization](https://igda.org/resources-archive/best-practices-for-game-localization/)*
+* Unity引擎本地化文档 **[Unity文档](https://docs.unity.com/en-us/engine/6000.7/manual/scripting/generate-dynamic-text/smart-strings)**
+* 微软软件本地化文档 **[微软文档](https://xtm.ai/blog/software-localization)**
