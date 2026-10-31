@@ -4,7 +4,7 @@
 
 游戏里给玩家看的每一句话、每个按钮名和道具名，都不要直接写在程序里，而是集中记在一张清单上，程序只记一个固定编号，显示时按编号去清单里取当前语言的文字。一句话要整句记，数字和名字留空由程序填，不能把句子拆开拼。存档时也只记物品、任务等的编号和数量，不记玩家看到的文字，这样换语言后旧存档仍能显示正确语言。
 
-## 5.2 规范
+## 5.2 规则
 
 ### 5.2.1 文本外置
 
@@ -54,19 +54,19 @@
 <img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
 
 > 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方</br>
-> 对应R5-03、R5-08
+> 对应规则R5-03、R5-08
 
 **问题编号-#28** </br>
 <img width="600" height="300" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 
 > “Affection 3 increased” 把数值夹在属性名和动词中间，英文读起来不自然。</br>
-> 对应R5-08、R5-12
+> 对应规则R5-08、R5-12
 
 **问题编号-#30** </br>
 <img width="600" height="300" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
 
 > “Charisma increased2” 的数值直接贴在单词后面，缺少空格，说明是为拼接生成。既属于表述不统一，也属于拼接问题。</br>
-> 对应R5-08、R5-10
+> 对应规则R5-08、R5-10
 
 ### 5.3.2 句子拼接
 
@@ -74,13 +74,13 @@
 <img width="600" height="300" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 
 > “chance to Obtain double dishes” 句中出现大写，说明前后两段文字分开存放后拼在了一起。</br>
-> 对应R5-09、R5-10
+> 对应规则R5-09、R5-10
 
 **问题编号-#26** </br>
 <img width="600" height="300" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
 
 > “purchasing itemsfrom the store” 两个单词之间缺少空格，同样是拼接导致。</br>
-> 对应R5-09、R5-10
+> 对应规则R5-09、R5-10
 
 ## 5.4 正确与错误示范
 
@@ -169,7 +169,37 @@ itemName.text = Localization.Get("ITEM_SWORD_IRON_NAME");
 
 或通过物品配置把 `ITEM_SWORD_IRON` 映射到名称文本 ID `ITEM_SWORD_IRON_NAME`，再查当前语言文本。这样切换到英文后，旧存档会显示 `Iron Sword`，不会继续显示“铁剑”。
 
-## 5.5 检查清单
+```## 5.5 使用Unity引擎时的操作tips
+
+**5.5.1 用 String Table 管所有可见文本**
+
+在 `Window → Asset Management → Localization Tables` 中创建 `String Table Collection`，每个 key 就是本章的字符串 ID。</br>
+
+代码和预制体里只引用 key，不写文字；UI 上的 `Text`/`TextMeshProUGUI` 组件可绑定 `LocalizedString`，由它按当前 Locale 从 String Table 取值。</br>
+
+**5.5.2 用 Smart Strings 处理占位符与语法变化**
+
+Smart Strings 是 Unity 对 SmartFormat 的移植，支持**命名占位符**，替代 `{0}`、`{1}` 这类数字索引，对译者更友好。</br>
+
+**5.5.3. 存档只存 ID，显示时查 String Table**
+
+存档里保存 `"itemId": "ITEM_SWORD_IRON"`，读档时用 `Localization.Get("ITEM_SWORD_IRON_NAME")` 或通过物品配置映射到名称 key，再按当前语言取文本。
+
+**不要在存档中保存任何 `LocalizedString` 的当前取值**——存档一旦存了文字，切语言后旧档就可能出现混杂语言。
+
+**5.5.4. 玩家输入单独保存，不进 String Table**
+
+玩家给女儿起的名字存为原始字符串，不放入任何 String Table，也不标记翻译；需要嵌入系统句子时，把它作为 Smart String 的 `{daughter_name}` 参数传入即可。</br>
+
+**内部调试日志、协议字段、文件路径**同样不进 String Table——String Table 的每一行都是给译者的，放进去只会浪费翻译资源。
+
+**5.5.5 预制体文字也要走 key**
+
+Unity 的 LocalizedString 支持在 Prefab 上直接绑定 key，但**预制体里残留的默认占位文字仍需清掉或替换为 key 引用**；前作英文界面漏出中文，正是“预制体默认文字没有外置”的典型表现。可以在构建前用脚本扫描 Prefab 中是否有未被 LocalizedString 覆盖的硬编码字符串。
+```
+
+## 5.6 检查清单
+
 ☐ 在代码和 UI 预制体里搜索，找不到玩家可见的中文。</br>
 
 ☐ 每个字符串 ID 都符合命名格式，且没有重复。</br>
