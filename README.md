@@ -51,7 +51,8 @@
 ### 5.3.1 文本表与统一表述
 
 **问题编号-#23** </br>
-https://drive.google.com/file/d/1Q3phRp61xxnqc0Tv2rbeOcVN8NHWLkO1/view?usp=sharing
+<img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/01733f2d-9d1a-48dd-9c2d-0e5efee83fe8" />
+
 
 > 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方</br>
 > 对应规则 R5-03、R5-08
