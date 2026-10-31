@@ -189,7 +189,7 @@ Smart Strings 能够一句话保留完整模板，支持命名占位符，替代
 
 存档一旦存了文字，切语言后旧档就可能出现混杂语言。
 
-**5.5.4. 玩家输入单独保存，不进 String Table**
+**玩家输入单独保存，不进 String Table**
 
 玩家给女儿起的名字存为原始字符串，不放入任何 String Table，也不标记翻译；需要嵌入系统句子时，把它作为 Smart String 的 `{daughter_name}` 参数传入即可。</br>
 
