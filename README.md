@@ -51,7 +51,7 @@
 ### 5.3.1 文本表与统一表述
 
 **问题编号-#23** </br>
-<img width="600" height="300" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
+(https://docs.unity3d.com/Packages/com.unity.localization@1.4/manual/LocalizationSettings.html)
 
 > 属性提升用的是 “increased by 5%” 这种句式，和#28、#30 的表述都不同。三处含义相同，却有三种写法，说明各自单独写在了不同地方</br>
 > 对应规则 R5-03、R5-08
